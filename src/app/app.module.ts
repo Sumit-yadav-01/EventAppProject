@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './users/login/login.component';
 import { RegistrationComponent } from './users/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EventAppService } from './event-app.service';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegistrationComponent
   ],
   //Add the ReactiveFormsModule to the imports array
+  //Add the matformfieldmodule to the imports array
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [EventAppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
