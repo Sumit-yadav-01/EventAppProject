@@ -7,3 +7,10 @@
   .mat-form-field {
     width: 30%;
   }
+
+  //make login-button class to display text in blue and underlined and cursor as pointer
+  .login-button {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
