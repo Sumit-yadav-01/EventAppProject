@@ -7,6 +7,10 @@ import { LoginComponent } from './users/login/login.component';
 import { RegistrationComponent } from './users/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EventAppService } from './event-app.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import { EventAppService } from './event-app.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [EventAppService],
   bootstrap: [AppComponent]

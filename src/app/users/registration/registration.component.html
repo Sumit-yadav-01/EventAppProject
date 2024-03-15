@@ -1,23 +1,70 @@
+<!-- create a registration form with the following fields using mat-form-field:
+userId,email,firstName,lastName,password,Add a submit button to the
+form.Add a button to route to the login page. -->
+
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="userId">User Id</label>
-      <input type="text" class="form-control" id="userId" formControlName="userId">
-    </div>
   <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" formControlName="email">
+    <mat-form-field fxLayoutGap="16px">
+      <mat-label>User Id</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Enter User Id"
+        formControlName="userId"
+      />
+    </mat-form-field>
   </div>
   <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input type="text" class="form-control" id="firstName" formControlName="firstName">
+    <mat-form-field fxLayoutGap="16px">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        placeholder="Enter Email"
+        formControlName="email"
+      />
+    </mat-form-field>
   </div>
   <div class="form-group">
-    <label for="lastName">Last Name</label>
-    <input type="text" class="form-control" id="lastName" formControlName="lastName">
+    <mat-form-field fxLayoutGap="16px">
+      <mat-label>First Name</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Enter First Name"
+        formControlName="firstName"
+      />
+    </mat-form-field>
   </div>
   <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" formControlName="password">
+    <mat-form-field fxLayoutGap="16px">
+      <mat-label>Last Name</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Enter Last Name"
+        formControlName="lastName"
+      />
+    </mat-form-field>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="form-group">
+    <mat-form-field fxLayoutGap="16px">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Enter Password"
+        formControlName="password"
+      />
+    </mat-form-field>
+  </div>
+  <a routerLink="/login">Login</a>
+  <button
+    type="submit"
+    mat-raised-buttom
+    color="primary"
+    class="btn btn-primary"
+  >
+    Submit
+  </button>
 </form>
