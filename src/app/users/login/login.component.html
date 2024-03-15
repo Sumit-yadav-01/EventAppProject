@@ -3,7 +3,7 @@ userId
 password
 Add a submit button to the form. -->
 
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<form class="login-form" [formGroup]="loginForm">
   <div class="form-group">
     <mat-form-field fxLayoutGap="16px">
       <mat-label>User Id</mat-label>
@@ -27,12 +27,8 @@ Add a submit button to the form. -->
     </mat-form-field>
   </div>
   <!-- add a button to route to the registration page -->
-  <button class="registration-button" mat-button routerLink="/registration">Create New Account</button>
-  <button
-    type="submit"
-    mat-raised-buttom
-    color="primary"
-  >
-    Login
+  <button class="registration-button" mat-button routerLink="/registration">
+    Create New Account
   </button>
+  <button (click)="onSubmit()" mat-raised-buttom color="primary">Login</button>
 </form>

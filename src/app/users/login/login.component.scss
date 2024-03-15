@@ -5,7 +5,7 @@
 }
 
 .mat-form-field {
-  width: 30%;
+  width: 35%;
 }
 
 //make registration-button class to display text in blue and underlined and cursor as pointer
@@ -14,4 +14,11 @@
   color: blue;
   text-decoration: underline;
   cursor: pointer;
+}
+
+//show whole login form in center of the page horizontally and vertically
+.login-form {
+  margin: 0 auto;
+  width: 60%;
+  margin-top: 20%;
 }
