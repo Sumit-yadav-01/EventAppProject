@@ -13,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegistrationComponent
   ],
-  // 2. Add the ReactiveFormsModule to the imports array
+  //Add the ReactiveFormsModule to the imports array
   imports: [
     BrowserModule,
     AppRoutingModule,
