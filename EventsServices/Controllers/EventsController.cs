@@ -1,9 +1,11 @@
+using EventsServices.Models;
+using EventsServices.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventsServices.Controllers
 {
-  [Route("api/[controller]")]
+  [Route("api/event")]
   [ApiController]
   public class EventsController : ControllerBase
   {
@@ -14,72 +16,85 @@ namespace EventsServices.Controllers
       _eventService = eventService;
     }
 
-    // add method
-    [HttpGet]
+    //add method to get Events
+   [HttpGet]
     public async Task<ActionResult<IEnumerable<Event>>> GetEvents()
     {
       var events = await _eventService.GetEvents();
       return Ok(events);
     }
 
-    // add method
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Event>> GetEventDetails(int eventId)
+    //add method to get EventDetails by event id
+
+    [HttpGet("{eventId}")]
+    public async Task<ActionResult<EventDetails>> GetEventDetails(string eventId)
     {
-      var @event = await _eventService.GetEventDetails(eventId);
-      if (@event == null)
+      var eventDetails = await _eventService.GetEventDetails(eventId);
+      if (eventDetails == null)
       {
         return NotFound();
       }
-      return Ok(@event);
+      return Ok(eventDetails);
     }
 
-    // add method
-    [HttpPost]
-    public async Task<ActionResult<Event>> PostEvent(Event @event)
-    {
-      await _eventService.AddEvent(@event);
-      return CreatedAtAction("GetEvent", new { id = @event.Id }, @event);
-    }
+    //// add method
+    //[HttpGet("{id}")]
+    //public async Task<ActionResult<Event>> GetEventDetails(int eventId)
+    //{
+    //  var @event = await _eventService.GetEventDetails(eventId);
+    //  if (@event == null)
+    //  {
+    //    return NotFound();
+    //  }
+    //  return Ok(@event);
+    //}
 
-    // add method
-    [HttpPut("{id}")]
+    //// add method
+    //[HttpPost]
+    //public async Task<ActionResult<Event>> PostEvent(Event @event)
+    //{
+    //  await _eventService.AddEvent(@event);
+    //  return CreatedAtAction("GetEvent", new { id = @event.Id }, @event);
+    //}
 
-    public async Task<IActionResult> PutEvent(int id, Event @event)
-    {
-      if (id != @event.Id)
-      {
-        return BadRequest();
-      }
-      try
-      {
-        await _eventService.UpdateEvent(@event);
-      }
-      catch (DbUpdateConcurrencyException)
-      {
-        if (!_eventService.EventExists(id))
-        {
-          return NotFound();
-        }
-        else
-        {
-          throw;
-        }
-      }
-      return NoContent();
-    }
+    //// add method
+    //[HttpPut("{id}")]
 
-    // add method
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> removeFavourites(string userId,string eventId)
-    {
-      var @event = await _eventService.removeFavourites(userId,eventId);
-      if (@event == null)
-      {
-        return NotFound();
-      }
-      await _eventService.DeleteEvent(@event);
-      return NoContent();
-    }
+    //public async Task<IActionResult> PutEvent(int id, Event @event)
+    //{
+    //  if (id != @event.Id)
+    //  {
+    //    return BadRequest();
+    //  }
+    //  try
+    //  {
+    //    await _eventService.UpdateEvent(@event);
+    //  }
+    //  catch (DbUpdateConcurrencyException)
+    //  {
+    //    if (!_eventService.EventExists(id))
+    //    {
+    //      return NotFound();
+    //    }
+    //    else
+    //    {
+    //      throw;
+    //    }
+    //  }
+    //  return NoContent();
+    //}
+
+    //// add method
+    //[HttpDelete("{id}")]
+    //public async Task<IActionResult> removeFavourites(string userId,string eventId)
+    //{
+    //  var @event = await _eventService.removeFavourites(userId,eventId);
+    //  if (@event == null)
+    //  {
+    //    return NotFound();
+    //  }
+    //  await _eventService.DeleteEvent(@event);
+    //  return NoContent();
+    //}
   }
 }
