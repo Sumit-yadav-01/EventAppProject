@@ -13,4 +13,10 @@ namespace EventsServices.Models
     public string email { get; set; }
     public string password { get; set; }
   }
+
+  public class LoginModel
+  {
+    public string email { get; set; }
+    public string password { get; set; }
+  }
 }

@@ -20,7 +20,7 @@ namespace EventsServices.Services
     }
 
     //Implement IUserService
-    public async Task<Users> Login(string email, string password)
+    public async Task<Users> AuthenticateUser(string email, string password)
     {
       var user = await _user.Find(u => u.email == email && u.password == password).FirstOrDefaultAsync();
 

@@ -16,17 +16,6 @@ namespace EventsServices.Controllers
       _userService = userService;
     }
 
-    [HttpGet]
-    public async Task<ActionResult<Users>> Login(string email, string password)
-    {
-      var user = await _userService.Login(email, password);
-      if (user == null)
-      {
-        return NotFound();
-      }
-      return Ok(user);
-    }
-
     [HttpGet("{userId}")]
     public async Task<ActionResult<Users>> GetUser(string userId)
     {
