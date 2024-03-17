@@ -21,7 +21,8 @@ builder.Services.AddCors(options =>
 
 //Inject IEventService
 builder.Services.AddScoped<IEventService, EventService>();
-
+//Inject IUserService
+builder.Services.AddScoped<IUserService, UserService>();
 
 
 var app = builder.Build();

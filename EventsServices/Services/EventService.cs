@@ -73,11 +73,18 @@ namespace EventsServices.Services
     {
       try
       {
-
         // check if user exists
-        var user = await _user.Find(x => x.user_id == userId).FirstOrDefaultAsync();
+        var user = await _user.Find(x => x.id == userId).FirstOrDefaultAsync();
 
         if (user == null)
+        {
+          return false;
+        }
+
+        // check if user event already exists exists
+        var userEventExists = await _userEvents.Find(x => x.event_id == eventId && x.user_id == userId).FirstOrDefaultAsync();
+
+        if (userEventExists != null)
         {
           return false;
         }

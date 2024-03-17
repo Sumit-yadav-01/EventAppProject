@@ -38,7 +38,7 @@ namespace EventsServices.Controllers
     }
 
     //add method to add favourite event
-    [HttpPost]
+    [HttpPost("favourite")]
     public async Task<ActionResult<bool>> AddFavouriteEvent(string eventId, string userId)
     {
       var result = await _eventService.AddFavouriteEvent(eventId, userId);
