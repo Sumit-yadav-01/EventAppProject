@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ export class EventAppService {
   }
 
   //create a method getEvent by id which will fetch the data from the api
-  getEventById(eventId: number) {
+  getEventById(eventId: number): Observable<any> {
     return this.http.get(this.url + 'event/' + eventId);
   }
 }

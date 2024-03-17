@@ -1,4 +1,5 @@
 using EventsServices.Models;
+using MongoDB.Driver;
 using System.Text.Json;
 
 namespace EventsServices.Services
@@ -7,11 +8,17 @@ namespace EventsServices.Services
   {
     // add constructor and inject Iconfiguration
     private readonly IConfiguration _configuration;
+    private readonly MongoClient _client;
+    private readonly IMongoCollection<UserEvents> _userEvents;
+    private readonly IMongoCollection<Users> _user;
     public EventService(IConfiguration configuration)
     {
       _configuration = configuration;
+      _client = new MongoClient(_configuration.GetConnectionString("DefaultConnection"));
+      var mongoDatabase = _client.GetDatabase("EventApp_symd");
+      _userEvents = mongoDatabase.GetCollection<UserEvents>("user_events");
+      _user = mongoDatabase.GetCollection<Users>("users");
     }
-
 
     //Implement IEventService
     public async Task<Events> GetEvents()
@@ -57,6 +64,58 @@ namespace EventsServices.Services
       else
       {
         return null;
+      }
+    }
+
+
+    //Implement AddFavorite method to add event to favorites
+    public async Task<bool> AddFavouriteEvent(string eventId, string userId)
+    {
+      try
+      {
+
+        // check if user exists
+        var user = await _user.Find(x => x.user_id == userId).FirstOrDefaultAsync();
+
+        if (user == null)
+        {
+          return false;
+        }
+
+        var userEvent = new UserEvents
+        {
+          event_id = eventId,
+          user_id = userId
+        };
+
+        await _userEvents.InsertOneAsync(userEvent);
+        return true;
+
+      }
+      catch (Exception ex)
+      {
+        return false;
+      }
+    }
+
+    //Implement RemoveFavorite method to remove event from favorites
+    public async Task<bool> RemoveFavouriteEvent(string eventId, string userId)
+    {
+      try
+      {
+        var userEvent = await _userEvents.Find(x => x.event_id == eventId && x.user_id == userId).FirstOrDefaultAsync();
+
+        if (userEvent == null)
+        {
+          return false;
+        }
+
+        await _userEvents.DeleteOneAsync(x => x.event_id == eventId && x.user_id == userId);
+        return true;
+      }
+      catch (Exception ex)
+      {
+        return false;
       }
     }
   }

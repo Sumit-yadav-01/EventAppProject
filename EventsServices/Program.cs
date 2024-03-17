@@ -9,8 +9,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Add Cors policy to Allow All Orgins
+builder.Services.AddCors(options =>
+{
+  options.AddDefaultPolicy(
+       builder =>
+       {
+         builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+       });
+});
+
 //Inject IEventService
 builder.Services.AddScoped<IEventService, EventService>();
+
+
 
 var app = builder.Build();
 
@@ -20,7 +32,7 @@ if (app.Environment.IsDevelopment())
   app.UseSwagger();
   app.UseSwaggerUI();
 }
-
+app.UseCors();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

@@ -17,7 +17,7 @@ namespace EventsServices.Controllers
     }
 
     //add method to get Events
-   [HttpGet]
+    [HttpGet]
     public async Task<ActionResult<IEnumerable<Event>>> GetEvents()
     {
       var events = await _eventService.GetEvents();
@@ -37,64 +37,20 @@ namespace EventsServices.Controllers
       return Ok(eventDetails);
     }
 
-    //// add method
-    //[HttpGet("{id}")]
-    //public async Task<ActionResult<Event>> GetEventDetails(int eventId)
-    //{
-    //  var @event = await _eventService.GetEventDetails(eventId);
-    //  if (@event == null)
-    //  {
-    //    return NotFound();
-    //  }
-    //  return Ok(@event);
-    //}
+    //add method to add favourite event
+    [HttpPost]
+    public async Task<ActionResult<bool>> AddFavouriteEvent(string eventId, string userId)
+    {
+      var result = await _eventService.AddFavouriteEvent(eventId, userId);
+      return Ok(result);
+    }
 
-    //// add method
-    //[HttpPost]
-    //public async Task<ActionResult<Event>> PostEvent(Event @event)
-    //{
-    //  await _eventService.AddEvent(@event);
-    //  return CreatedAtAction("GetEvent", new { id = @event.Id }, @event);
-    //}
-
-    //// add method
-    //[HttpPut("{id}")]
-
-    //public async Task<IActionResult> PutEvent(int id, Event @event)
-    //{
-    //  if (id != @event.Id)
-    //  {
-    //    return BadRequest();
-    //  }
-    //  try
-    //  {
-    //    await _eventService.UpdateEvent(@event);
-    //  }
-    //  catch (DbUpdateConcurrencyException)
-    //  {
-    //    if (!_eventService.EventExists(id))
-    //    {
-    //      return NotFound();
-    //    }
-    //    else
-    //    {
-    //      throw;
-    //    }
-    //  }
-    //  return NoContent();
-    //}
-
-    //// add method
-    //[HttpDelete("{id}")]
-    //public async Task<IActionResult> removeFavourites(string userId,string eventId)
-    //{
-    //  var @event = await _eventService.removeFavourites(userId,eventId);
-    //  if (@event == null)
-    //  {
-    //    return NotFound();
-    //  }
-    //  await _eventService.DeleteEvent(@event);
-    //  return NoContent();
-    //}
+    //create method to remove favourite event
+    [HttpDelete]
+    public async Task<ActionResult<bool>> RemoveFavouriteEvent(string eventId, string userId)
+    {
+      var result = await _eventService.RemoveFavouriteEvent(eventId, userId);
+      return Ok(result);
+    }
   }
 }

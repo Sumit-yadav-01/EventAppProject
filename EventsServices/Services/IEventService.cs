@@ -10,15 +10,10 @@ namespace EventsServices.Services
     // add getEventDetails() method
     Task<EventDetails> GetEventDetails(string eventId);
 
+    //add AddFavouriteEvent() method
+    Task<bool> AddFavouriteEvent(string events, string userId);
 
-    //// add addEvent() method
-    //Task<Event> AddEvent(Event @event);
-    //// add updateEvent() method
-    //Task<Event> UpdateEvent(Event @event);
-    //// add eventExists() method
-    //bool EventExists(int id);
-    //Task DeleteEvent(int id);
-    //Task<bool> DeleteEventDetails(
-    //  int id);
+   // add remove favourite event method
+    Task<bool> RemoveFavouriteEvent(string eventId, string userId);
   }
 }

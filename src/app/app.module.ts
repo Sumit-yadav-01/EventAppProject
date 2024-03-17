@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
 import { EventsComponent } from './events/events.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,10 +22,11 @@ import { EventsComponent } from './events/events.component';
     LoginComponent,
     RegistrationComponent,
     HeaderComponent,
-    EventsComponent
+    EventsComponent,
   ],
   //Add the ReactiveFormsModule to the imports array
   //Add the matformfieldmodule to the imports array
+  //Add MatCardModule to the imports array
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,9 +34,11 @@ import { EventsComponent } from './events/events.component';
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    MatCardModule,
   ],
   providers: [EventAppService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
