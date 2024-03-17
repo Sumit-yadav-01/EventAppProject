@@ -29,7 +29,7 @@ namespace EventsServices.Services
 
     public async Task<Users> GetUser(string userId)
     {
-      var user = await _user.Find(u => u.id == userId).FirstOrDefaultAsync();
+      var user = await _user.Find(u => u.user_id == userId).FirstOrDefaultAsync();
       return user;
     }
 
@@ -49,13 +49,13 @@ namespace EventsServices.Services
 
     public async Task<bool> UpdateUser(Users user)
     {
-      var updateResult = await _user.ReplaceOneAsync(filter: u => u.id == user.id, replacement: user);
+      var updateResult = await _user.ReplaceOneAsync(filter: u => u.user_id == user.user_id, replacement: user);
       return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
     }
 
     public async Task<bool> DeleteUser(string userId)
     {
-      var deleteResult = await _user.DeleteOneAsync(u => u.id == userId);
+      var deleteResult = await _user.DeleteOneAsync(u => u.user_id == userId);
       return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;
     }
 

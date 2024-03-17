@@ -6,7 +6,7 @@ namespace EventsServices.Models
   {
     [BsonId]
     [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-    public string id { get; set; }
+    public string? id { get; set; }
     public string user_id { get; set; }
     public string event_id { get; set; }
   }
