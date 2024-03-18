@@ -15,6 +15,8 @@ import { HeaderComponent } from './header/header.component';
 import { EventsComponent } from './events/events.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { AuthService } from './authService';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,7 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     MatCardModule,
   ],
-  providers: [EventAppService],
+  providers: [EventAppService, AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
