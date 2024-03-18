@@ -14,6 +14,8 @@ export class EventsComponent implements OnInit {
   favoriteEvents: any;
   //create a variable to store if we are showing just favorite events
   showFavorite = false;
+  //create a variable to store the isLoding
+  isLoading = false;
 
   //generate a constructor & add event-app.service to it
   constructor(
@@ -34,6 +36,7 @@ export class EventsComponent implements OnInit {
 
   //create a method to fetch the events from EventAppService getEvents method
   getEvents() {
+    this.isLoading = true;
     this.eventService.getEvents().subscribe((response: any) => {
       //filter the events to show only favorite events if showFavorite is true otherwise show all events
       this.events = this.showFavorite
@@ -41,6 +44,7 @@ export class EventsComponent implements OnInit {
             this.favoriteEvents?.some((favorite: any) => favorite == event.id)
           )
         : response.events;
+      this.isLoading = false;
     });
   }
 

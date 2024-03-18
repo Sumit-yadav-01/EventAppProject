@@ -1,3 +1,10 @@
+<!-- //Add a mat-progress-bar to show the progress of the API call -->
+<mat-progress-bar
+  mode="indeterminate"
+  *ngIf="isLoading"
+  class="progress-bar"
+></mat-progress-bar>
+
 <!-- //Add a toggle to show the favourite events -->
 <div class="toggle">
   <mat-slide-toggle [checked]="showFavorite" (change)="onToggle()"

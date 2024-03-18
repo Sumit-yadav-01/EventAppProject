@@ -19,6 +19,7 @@ import { AuthService } from './authService';
 import { AuthGuard } from './auth.guard';
 //import the MatSlideToggleModule
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   //Add the ReactiveFormsModule to the imports array
   //Add the matformfieldmodule to the imports array
   //Add MatCardModule to the imports array
+  //Add MatSlideToggleModule to the imports array
+  //Add the MatProgressBarModule to the imports array
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -42,6 +45,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     HttpClientModule,
     MatCardModule,
     MatSlideToggleModule,
+    MatProgressBarModule,
   ],
   providers: [EventAppService, AuthService, AuthGuard],
   bootstrap: [AppComponent],
