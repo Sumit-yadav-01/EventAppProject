@@ -1,0 +1,13 @@
+<div class="header" *ngIf="isLoggedIn">
+  <div class="header-right" style="margin-top: 10px">
+    <button
+      *ngIf="isLoggedIn"
+      mat-raised-button
+      color="warn"
+      style="float: right"
+      (click)="onLogout()"
+    >
+      Logout
+    </button>
+  </div>
+</div>
