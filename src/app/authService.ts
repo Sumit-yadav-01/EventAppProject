@@ -1,5 +1,11 @@
+import { Injectable } from '@angular/core';
+
 //create a authservice class
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthService {
+  loggedInUser: any;
   constructor() {}
 
   //create isloggedin method to check if the user is logged in

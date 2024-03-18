@@ -26,14 +26,12 @@ namespace EventsServices.Controllers
     public async Task<IActionResult> Login([FromBody] LoginModel user)
     {
       var existingUser = await _userService.AuthenticateUser(user.email, user.password);
-      if (existingUser == null)
-      {
-        return NotFound();
-      }
+      if (existingUser == null) return NotFound();
 
       //return jsonwebtoken if user exists
-      var tokenString = GenerateJSONWebToken();
-      return Ok(new { token = tokenString });
+      existingUser.token = GenerateJSONWebToken();
+
+      return Ok(existingUser);
     }
 
     //Create a method to GenerateJSONWebToken

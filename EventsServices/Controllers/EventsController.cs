@@ -1,6 +1,5 @@
 using EventsServices.Models;
 using EventsServices.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventsServices.Controllers
@@ -51,6 +50,14 @@ namespace EventsServices.Controllers
     {
       var result = await _eventService.RemoveFavouriteEvent(eventId, userId);
       return Ok(result);
+    }
+
+    //create a method to get favourite events by userId
+    [HttpGet("favourite/{userId}")]
+    public async Task<ActionResult<IEnumerable<Event>>> GetFavouriteEvents(string userId)
+    {
+      var events = await _eventService.GetFavouriteEvents(userId);
+      return Ok(events);
     }
   }
 }

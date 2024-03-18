@@ -1,17 +1,43 @@
 <!-- Add Angular material card to show the list of events and a action button to add event to favourite -->
 <div class="container">
   <div class="events-list">
-    <mat-card *ngFor="let event of events" class="event-card">
-      <mat-card-header>
-        <mat-card-title>{{ event.name }}</mat-card-title>
-        <mat-card-subtitle>{{ event.date }}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{ event.description }}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Add to Favourite</button>
-      </mat-card-actions>
-    </mat-card>
+    <div class="event-list-container">
+      <mat-card *ngFor="let event of events" class="event-card">
+        <mat-card-header>
+          <mat-card-title>{{ event.short_title }}</mat-card-title>
+          <mat-card-subtitle>{{
+            event.venue.display_location
+          }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <!-- // show the event image-->
+          <img
+            src="{{ event.performers[0].image }}"
+            alt="{{ event.short_title }}"
+            class="event-image"
+          />
+        </mat-card-content>
+        <mat-card-actions>
+          <!-- make button of blue color -->
+          <button
+            mat-raised-button
+            *ngIf="!isFavorite(event.id)"
+            color="primary"
+            (click)="addFavourite(event.id)"
+          >
+            Add to Favourite
+          </button>
+          <!-- make button of red color -->
+          <button
+            mat-raised-button
+            *ngIf="isFavorite(event.id)"
+            color="warn"
+            (click)="removeFavourite(event.id)"
+          >
+            Remove Favourite
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 </div>

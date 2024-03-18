@@ -67,14 +67,13 @@ namespace EventsServices.Services
       }
     }
 
-
     //Implement AddFavorite method to add event to favorites
     public async Task<bool> AddFavouriteEvent(string eventId, string userId)
     {
       try
       {
         // check if user exists
-        var user = await _user.Find(x => x.id == userId).FirstOrDefaultAsync();
+        var user = await _user.Find(x => x.user_id == userId).FirstOrDefaultAsync();
 
         if (user == null)
         {
@@ -124,6 +123,14 @@ namespace EventsServices.Services
       {
         return false;
       }
+    }
+
+    //Implement GetFavouriteEvents method to get user's favorite events
+    public async Task<List<UserEvents>> GetFavouriteEvents(string userId)
+    {
+      var userEvents = await _userEvents.Find(x => x.user_id == userId).ToListAsync();
+
+      return userEvents;
     }
   }
 }
