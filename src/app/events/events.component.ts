@@ -55,10 +55,10 @@ export class EventsComponent implements OnInit {
       .getFavouriteEvents(localStorage.getItem('userId'))
       .subscribe((response: any) => {
         this.favoriteEvents = response.map((event: any) => event.event_id);
-        if(this.showFavorite){
+        if (this.showFavorite) {
           this.events = this.events?.filter((event: any) =>
             this.favoriteEvents?.some((favorite: any) => favorite == event.id)
-          )
+          );
         }
       });
   }
