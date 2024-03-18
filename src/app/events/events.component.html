@@ -1,12 +1,11 @@
+<!-- //Add a toggle to show the favourite events -->
+<div class="toggle">
+  <mat-slide-toggle [checked]="showFavorite" (change)="onToggle()"
+    >Show Favourite Events</mat-slide-toggle
+  >
+</div>
 <!-- Add Angular material card to show the list of events and a action button to add event to favourite -->
 <div class="container">
-  <!-- //Add a toggle to show the favourite events -->
-  <mat-slide-toggle
-    style="float: right"
-    [checked]="showFavorite"
-    (change)="onToggle()"
-    >Show Favourite</mat-slide-toggle
-  >
   <div class="events-list">
     <div class="event-list-container">
       <mat-card *ngFor="let event of events" class="event-card">
