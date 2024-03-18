@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { AuthService } from './authService';
 import { AuthGuard } from './auth.guard';
+//import the MatSlideToggleModule
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { AuthGuard } from './auth.guard';
     MatButtonModule,
     HttpClientModule,
     MatCardModule,
+    MatSlideToggleModule,
   ],
   providers: [EventAppService, AuthService, AuthGuard],
   bootstrap: [AppComponent],

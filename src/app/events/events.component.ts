@@ -27,6 +27,11 @@ export class EventsComponent implements OnInit {
     this.getEvents();
   }
 
+  onToggle(): void {
+    this.showFavorite = !this.showFavorite;
+    this.getEvents();
+  }
+
   //create a method to fetch the events from EventAppService getEvents method
   getEvents() {
     this.eventService.getEvents().subscribe((response: any) => {

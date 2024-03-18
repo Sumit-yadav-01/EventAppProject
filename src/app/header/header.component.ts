@@ -14,7 +14,7 @@ export class HeaderComponent {
     this._router.navigateByUrl('login');
   }
 
-  isLoggedIn(): boolean {
-    return localStorage.getItem('userId') ? true : false;
+  get isLoggedIn(): boolean {
+    return localStorage.getItem('token') ? true : false;
   }
 }
