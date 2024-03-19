@@ -48,4 +48,9 @@ export class EventAppService {
     const url = `${this.url}event?eventId=${eventId}&userId=${userId}`;
     return this.http.delete(url);
   }
+
+  //create a method to add a new user
+  addUser(user: any): Observable<any> {
+    return this.http.post(this.url + 'user', user);
+  }
 }
