@@ -1,9 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RegistrationComponent } from './registration.component';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { EventAppService } from 'src/app/event-app.service';
-import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('RegistrationComponent', () => {
