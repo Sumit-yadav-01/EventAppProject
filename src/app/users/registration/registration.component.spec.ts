@@ -28,4 +28,25 @@ describe('RegistrationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //write test case to initialize form on ngOnInit
+  it('should initialize form on ngOnInit', () => {
+    component.ngOnInit();
+    expect(component.registrationForm).toBeDefined();
+  });
+
+  //write test case to call register method on submit
+  it('should call addUser method on submit', () => {
+    const eventAppService = TestBed.inject(EventAppService);
+    spyOn(eventAppService, 'addUser').and.callThrough();
+    component.registrationForm.setValue({
+      userId: 'testUser',
+      firstName: 'firstName',
+      lastName: 'lastName',
+      email: 'email@test.com',
+      password: 'password',
+    });
+    component.onSubmit();
+    expect(eventAppService.addUser).toHaveBeenCalled();
+  });
 });

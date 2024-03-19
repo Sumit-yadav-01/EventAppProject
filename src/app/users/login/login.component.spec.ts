@@ -36,4 +36,13 @@ describe('LoginComponent', () => {
     component.ngOnInit();
     expect(component.loginForm).toBeDefined();
   });
+
+  //write test case to call login method on submit
+  it('should call login method on submit', () => {
+    const eventAppService = TestBed.inject(EventAppService);
+    spyOn(eventAppService, 'login').and.callThrough();
+    component.loginForm.setValue({ userId: 'test', password: 'test' });
+    component.onSubmit();
+    expect(eventAppService.login).toHaveBeenCalled();
+  });
 });
