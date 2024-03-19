@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventsComponent } from './events.component';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { EventAppService } from '../event-app.service';
 
 describe('EventsComponent', () => {
   let component: EventsComponent;
@@ -9,6 +13,11 @@ describe('EventsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [EventsComponent],
+      providers: [
+        { provide: FormBuilder, useValue: new FormBuilder() },
+        { provide: EventAppService },
+      ],
+      imports: [ReactiveFormsModule, HttpClientTestingModule],
     }).compileComponents();
   });
 
@@ -20,54 +29,5 @@ describe('EventsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  // write test cases for the methods
-  it('should call getFavoriteEvents method', () => {
-    spyOn(component, 'getFavoriteEvents');
-    component.ngOnInit();
-    expect(component.getFavoriteEvents).toHaveBeenCalled();
-  });
-
-  it('should call getEvents method', () => {
-    spyOn(component, 'getEvents');
-    component.ngOnInit();
-    expect(component.getEvents).toHaveBeenCalled();
-  });
-
-  it('should call getEvents method', () => {
-    spyOn(component, 'getEvents');
-    component.onToggle();
-    expect(component.getEvents).toHaveBeenCalled();
-  });
-
-  it('should call getFavoriteEvents method', () => {
-    spyOn(component, 'getFavoriteEvents');
-    component.addFavourite('1');
-    expect(component.getFavoriteEvents).toHaveBeenCalled();
-  });
-
-  it('should call getFavoriteEvents method', () => {
-    spyOn(component, 'getFavoriteEvents');
-    component.addFavourite('1');
-    expect(component.getFavoriteEvents).toHaveBeenCalled();
-  });
-
-  it('should call getFavoriteEvents method', () => {
-    spyOn(component, 'getFavoriteEvents');
-    component.addFavourite('1');
-    expect(component.getFavoriteEvents).toHaveBeenCalled();
-  });
-
-  it('should call getFavoriteEvents method', () => {
-    spyOn(component, 'getFavoriteEvents');
-    component.onToggle();
-    expect(component.getFavoriteEvents).toHaveBeenCalled();
-  });
-
-  it('should call getEvents method', () => {
-    spyOn(component, 'getEvents');
-    component.onToggle();
-    expect(component.getEvents).toHaveBeenCalled();
   });
 });

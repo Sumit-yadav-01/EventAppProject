@@ -13,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
 import { EventsComponent } from './events/events.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { AuthService } from './authService';
 import { AuthGuard } from './auth.guard';
@@ -47,7 +47,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSlideToggleModule,
     MatProgressBarModule,
   ],
-  providers: [EventAppService, AuthService, AuthGuard],
+  providers: [EventAppService, AuthService, AuthGuard, HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
