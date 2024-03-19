@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EventAppService } from 'src/app/event-app.service';
 import Swal from 'sweetalert2';
 
@@ -37,20 +33,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
     this.setupForm();
   }
-
-  // create getter for form validations
-  get nameControl() {
-    return this.registrationForm.get('name');
-  }
-
-  get emailControl() {
-    return this.registrationForm.get('email');
-  }
-
-  get passwordControl() {
-    return this.registrationForm.get('password');
-  }
-
+  
   // 6. Add a submit button
   onSubmit() {
     if (this.registrationForm.valid) {
