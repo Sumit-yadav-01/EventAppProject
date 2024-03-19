@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { EventAppService } from 'src/app/event-app.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registration',
@@ -65,7 +66,11 @@ export class RegistrationComponent implements OnInit {
       };
       this.eventService.addUser(payLoad).subscribe((response) => {
         //navigate to the events page
-        if (response) window.location.href = '/login';
+        if (response) {
+          window.location.href = '/login';
+        } else {
+          Swal.fire('Error', 'User already exists', 'error');
+        }
       });
     }
   }
