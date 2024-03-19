@@ -37,7 +37,7 @@ export class EventsComponent implements OnInit {
   //create a method to fetch the events from EventAppService getEvents method
   getEvents() {
     this.isLoading = true;
-    this.eventService.getEvents().subscribe((response: any) => {
+    this.eventService.getEvents()?.subscribe((response: any) => {
       //filter the events to show only favorite events if showFavorite is true otherwise show all events
       this.events = this.showFavorite
         ? response.events.filter((event: any) =>
@@ -53,7 +53,7 @@ export class EventsComponent implements OnInit {
     console.log(this.authService.loggedInUser);
     this.eventService
       .addFavouriteEvent(eventId, localStorage.getItem('userId'))
-      .subscribe(() => {
+      ?.subscribe(() => {
         this.getFavoriteEvents();
       });
   }
@@ -62,7 +62,7 @@ export class EventsComponent implements OnInit {
   getFavoriteEvents() {
     this.eventService
       .getFavouriteEvents(localStorage.getItem('userId'))
-      .subscribe((response: any) => {
+      ?.subscribe((response: any) => {
         this.favoriteEvents = response.map((event: any) => event.event_id);
         if (this.showFavorite) {
           this.events = this.events?.filter((event: any) =>
@@ -81,7 +81,7 @@ export class EventsComponent implements OnInit {
   removeFavourite(eventId: any) {
     this.eventService
       .removeFavouriteEvent(eventId, localStorage.getItem('userId'))
-      .subscribe(() => {
+      ?.subscribe(() => {
         this.getFavoriteEvents();
       });
   }
