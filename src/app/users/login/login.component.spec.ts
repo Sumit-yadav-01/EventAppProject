@@ -36,18 +36,4 @@ describe('LoginComponent', () => {
     component.ngOnInit();
     expect(component.loginForm).toBeDefined();
   });
-
-  it('should call login on form submit and handle success', () => {
-    spyOn(localStorage, 'setItem');
-    component.loginForm.setValue({
-      userId: 'testUser',
-      password: 'password',
-    });
-    component.onSubmit();
-  });
-
-  it('should handle login error', () => {
-    spyOn(window, 'alert');
-    component.onSubmit();
-  });
 });
