@@ -36,7 +36,7 @@ namespace EventsServices.Services
     public async Task<bool> AddUser(Users user)
     {
       //check if user already exists
-      var existingUser = await _user.Find(u => u.user_id == user.user_id).FirstOrDefaultAsync();
+      var existingUser = await _user.Find(u => u.user_id == user.user_id || u.email == user.email).FirstOrDefaultAsync();
       if (existingUser != null)
       {
         return false;
