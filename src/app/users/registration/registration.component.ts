@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  Form,
   FormBuilder,
-  FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
@@ -57,27 +55,16 @@ export class RegistrationComponent implements OnInit {
   onSubmit() {
     if (this.registrationForm.valid) {
       //call adduser method from eventappservice
-      const payLoad = {
-        user_id: this.registrationForm.value.userId,
-        first_name: this.registrationForm.value.firstName,
-        last_name: this.registrationForm.value.lastName,
-        email: this.registrationForm.value.email,
-        password: this.registrationForm.value.password,
-      };
-      this.eventService.addUser(payLoad).subscribe((response) => {
-        //navigate to the events page
-        if (response) {
-          window.location.href = '/login';
-        } else {
-          Swal.fire('Error', 'User already exists', 'error');
-        }
-      });
+      this.eventService
+        .addUser(this.registrationForm.value)
+        .subscribe((response) => {
+          //navigate to the events page
+          if (response) {
+            window.location.href = '/login';
+          } else {
+            Swal.fire('Error', 'User already exists', 'error');
+          }
+        });
     }
-  }
-
-  // 8. Add a reset button
-  resetForm() {
-    this.registrationForm.reset();
-    // this.successMessage = '';
   }
 }

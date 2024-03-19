@@ -11,7 +11,7 @@ namespace EventsServices.Services
     Task<Users> GetUser(string userId);
 
     // add addUser() method
-    Task<bool> AddUser(Users user);
+    Task<bool> AddUser(RegisterModel user);
 
     // add updateUser() method
     Task<bool> UpdateUser(Users user);

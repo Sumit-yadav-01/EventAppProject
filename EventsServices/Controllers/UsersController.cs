@@ -28,7 +28,7 @@ namespace EventsServices.Controllers
     }
 
     [HttpPost]
-    public async Task<ActionResult<bool>> AddUser(Users user)
+    public async Task<ActionResult<bool>> AddUser(RegisterModel user)
     {
       var result = await _userService.AddUser(user);
       return Ok(result);

@@ -20,4 +20,14 @@ namespace EventsServices.Models
     public string userId { get; set; }
     public string password { get; set; }
   }
+
+  //create a new class for RegisterModel
+  public class RegisterModel
+  {
+    public string userId { get; set; }
+    public string firstName { get; set; }
+    public string lastName { get; set; }
+    public string email { get; set; }
+    public string password { get; set; }
+  }
 }

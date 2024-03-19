@@ -33,17 +33,27 @@ namespace EventsServices.Services
       return user;
     }
 
-    public async Task<bool> AddUser(Users user)
+    public async Task<bool> AddUser(RegisterModel user)
     {
       //check if user already exists
-      var existingUser = await _user.Find(u => u.user_id == user.user_id || u.email == user.email).FirstOrDefaultAsync();
+      var existingUser = await _user.Find(u => u.user_id == user.userId || u.email == user.email).FirstOrDefaultAsync();
       if (existingUser != null)
       {
         return false;
       }
 
+      //create new user object and assign values
+      var newUser = new Users
+      {
+        user_id = user.userId,
+        first_name = user.firstName,
+        last_name = user.lastName,
+        email = user.email,
+        password = user.password
+      };
+
       //add user to the database 
-      await _user.InsertOneAsync(user);
+      await _user.InsertOneAsync(newUser);
       return true;
     }
 

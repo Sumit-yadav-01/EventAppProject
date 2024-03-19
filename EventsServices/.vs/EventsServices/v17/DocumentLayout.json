@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\EventApp\\EventsServices\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|c:\\users\\administrator\\eventapp\\eventsservices\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|C:\\Users\\Administrator\\EventApp\\EventsServices\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|C:\\Users\\Administrator\\EventApp\\EventsServices\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|C:\\Users\\Administrator\\EventApp\\EventsServices\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|solutionrelative:services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|C:\\Users\\Administrator\\EventApp\\EventsServices\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|C:\\Users\\Administrator\\EventApp\\EventsServices\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|C:\\Users\\Administrator\\EventApp\\EventsServices\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|c:\\users\\administrator\\eventapp\\eventsservices\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D24C9081-5D52-4D58-AA32-BC4B720E3EF3}|EventsServices.csproj|C:\\Users\\Administrator\\EventApp\\EventsServices\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,30 +50,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\EventApp\\EventsServices\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "C:\\Users\\Administrator\\EventApp\\EventsServices\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowB4AAAA3AAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowCAAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-17T23:21:41.423Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\EventApp\\EventsServices\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\UserService.cs",
               "ToolTip": "C:\\Users\\Administrator\\EventApp\\EventsServices\\Services\\UserService.cs",
               "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAADwvx0AAAAzAAAA",
+              "ViewState": "AQIAACMAAAAAAAAAAAA6wCsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-17T23:16:19.035Z",
               "EditorCaption": ""
@@ -92,13 +92,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\EventApp\\EventsServices\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
               "ToolTip": "C:\\Users\\Administrator\\EventApp\\EventsServices\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAawCIAAAAFAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAawCEAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-17T23:17:28.166Z",
               "EditorCaption": ""
@@ -117,26 +117,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\EventApp\\EventsServices\\Models\\Users.cs",
               "RelativeDocumentMoniker": "Models\\Users.cs",
               "ToolTip": "C:\\Users\\Administrator\\EventApp\\EventsServices\\Models\\Users.cs",
               "RelativeToolTip": "Models\\Users.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAwwBYAAAABAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAADwvxgAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-17T23:19:43.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\EventApp\\EventsServices\\Services\\IUserService.cs",
               "RelativeDocumentMoniker": "Services\\IUserService.cs",
               "ToolTip": "C:\\Users\\Administrator\\EventApp\\EventsServices\\Services\\IUserService.cs",
               "RelativeToolTip": "Services\\IUserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAnAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAYwAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-17T23:21:29.386Z",
               "EditorCaption": ""
