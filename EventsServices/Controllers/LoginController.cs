@@ -25,7 +25,7 @@ namespace EventsServices.Controllers
     [HttpPost]
     public async Task<IActionResult> Login([FromBody] LoginModel user)
     {
-      var existingUser = await _userService.AuthenticateUser(user.email, user.password);
+      var existingUser = await _userService.AuthenticateUser(user.userId, user.password);
       if (existingUser == null) return NotFound();
 
       //return jsonwebtoken if user exists

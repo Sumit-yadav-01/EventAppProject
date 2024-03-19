@@ -5,7 +5,7 @@ namespace EventsServices.Services
   public interface IUserService
   {
     //add login() method
-    Task<Users> AuthenticateUser(string email, string password);
+    Task<Users> AuthenticateUser(string userId, string password);
 
     // add getUser() method
     Task<Users> GetUser(string userId);
